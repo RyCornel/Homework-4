@@ -53,7 +53,7 @@ def results():
 
     params = {
         # TODO: Enter query parameters here for the 'appid' (your api key),
-        'appid' : '0d78fddd0aee932f208f160128525e57',
+        'appid' : API_KEY,
         # the city, and the units (metric or imperial).
         'q' : city,
         # See the documentation here: https://openweathermap.org/current
@@ -85,25 +85,29 @@ def results():
 
     return render_template('results.html', **context)
 
+def cityWeather(city, units):
+
+    params = {
+
+        'appid' : API_KEY,
+        'q' : city,
+        'units' : units
+
+    }
 
 @app.route('/comparison_results')
 def comparison_results():
     """Displays the relative weather for 2 different cities."""
     # TODO: Use 'request.args' to retrieve the cities & units from the query
     # parameters.
-    city1 = request.args.get('city')
-    city2 = request.args.get('city')
+    city1 = request.args.get('city1')
+    city2 = request.args.get('city2')
     units = request.args.get('units')
 
     # TODO: Make 2 API calls, one for each city. HINT: You may want to write a 
     # helper function for this!
 
-    def cityAPI():
-        if 'city' == city1:
-            response = requests.get("http://api.openweathermap.org/data/2.5/weather/city1={API_KEY}")
-        else:
-            response = requests.get("http://api.openweathermap.org/data/2.5/weather/city2={API_KEY}")       
-        
+    city1 = cityWeather
 
 
     # TODO: Pass the information for both cities in the context. Make sure to
@@ -112,11 +116,11 @@ def comparison_results():
     # `city2_info`, to organize the data.
     context = {
 
-        'city1_info': 
-            {'temp', 'humidity', 'wind', 'sunset'},
+        city1 : 'city1_info'
+            ({'temp', 'humidity', 'wind', 'sunset'}),
         
-        'city2_info': 
-            {'temp', 'humidity', 'wind', 'sunset'}
+        city2 : 'city2_info' 
+            ({'temp', 'humidity', 'wind', 'sunset'})
 
     }
 
