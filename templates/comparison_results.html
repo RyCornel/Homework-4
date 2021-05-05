@@ -6,7 +6,7 @@
         TODO: Replace the hard-coded cities and date below with data from the 
         server.
     #}
-    <h1>Weather in {{city1}} and {{city2}}</h1>
+    <h1>Weather in {{city1_info['city']}} and {{city2_info['city']}}</h1>
     <p>{{date}}</p>
 
 
@@ -15,7 +15,7 @@
         Replace 'F' with the appropriate units.
     #}
     <p>
-        It is {{temp}} {{units}} [WARMER/COLDER] in {{city1}} than in {{city2}} today.
+        It is {{city1_info['temp'] - city2_info['temp']}} {{units}} {% if city1_info['temp'] - city2_info['temp'] < 0 %} colder {% else %} warmer {% endif %} in {{city1_info['city']}} than in {{city2_info['city']}} today.
     </p>
 
     <p>
