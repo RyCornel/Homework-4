@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="weather-form">
+    {# 
+        TODO: Replace the hard-coded cities and date below with data from the 
+        server.
+    #}
+    <h1>Weather in {{city1}} and {{city2}}</h1>
+    <p>{{date}}</p>
+
+
+    {#
+        TODO: Add the temperature, description, and min & max temperature below.
+        Replace 'F' with the appropriate units.
+    #}
+    <p>
+        It is {{temp}} {{units}} [WARMER/COLDER] in {{city1}} than in {{city2}} today.
+    </p>
+
+    <p>
+        The humidity in {{city1}} is [AMOUNT] [GREATER/LESS] than in {{city2}}.
+    </p>
+
+    <p>
+        The wind speed in {{city1}} is [AMOUNT] [GREATER/LESS] than in {{city2}}.
+    </p>
+
+    <p>
+        The sun sets in {{city1}} [HOURS] hours [EARLIER/LATER] than in {{city2}}.
+    </p>
+    
+</section>
+
+{% endblock %}
