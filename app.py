@@ -100,9 +100,9 @@ def comparison_results():
 
     def cityAPI():
         if 'city' == city1:
-            'city1_info'
+            response = requests.get("http://api.openweathermap.org/data/2.5/weather/city1={API_KEY}")
         else:
-            'city2_info'       
+            response = requests.get("http://api.openweathermap.org/data/2.5/weather/city2={API_KEY}")       
         
 
 
