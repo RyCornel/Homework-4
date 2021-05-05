@@ -19,11 +19,11 @@
     </p>
 
     <p>
-        The humidity in {{city1}} is [AMOUNT] [GREATER/LESS] than in {{city2}}.
+        The humidity in {{city1_info["city"]}} is {{city1_info["humidity"]}}. {% if city1_info["humidity"] - city2_info["humidity"] < 0 %} Less {% else %} Greater {% endif %} than in {{city2_info["city"]}}.
     </p>
 
     <p>
-        The wind speed in {{city1}} is [AMOUNT] [GREATER/LESS] than in {{city2}}.
+        The wind speed in {{city1_info["city"]}} is {{city1_info["wind_speed"]}}. {% if city1_info["wind_speed"] - city2_info["wind_speed"] < 0 %} Less {% else %} Greater {% endif %} than in {{city2_info["city"]}}.
     </p>
 
     <p>
