@@ -102,7 +102,7 @@ def comparison_results():
         if 'city' == city1:
             'city1_info'
         else:
-            'city2_info'   
+            'city2_info'       
         
 
 
