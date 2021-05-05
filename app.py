@@ -120,12 +120,32 @@ def comparison_results():
     # HINT: It may be useful to create 2 new dictionaries, `city1_info` and 
     # `city2_info`, to organize the data.
     context = {
+        'date' : datetime.now(),
+        'units' : get_letter_for_units(units),
 
-        city1 : 'city1_info'
-            ({'temp', 'humidity', 'wind', 'sunset'}),
+        'city1_info' :
+            {'date': datetime.now(),
+            'city': city1['name'],
+            'description': city1['weather'][0]['weather-description'],
+            'temp': city1['main']['temp'],
+            'humidity': city1['main']['humidity'],
+            'wind_speed': city1['wind']['speed'],
+            'sunrise': datetime.fromtimestamp(city1['sys']['sunrise']),
+            'sunset': datetime.fromtimestamp(city1['sys']['sunset']),
+            'units_letter': get_letter_for_units(units)
+            },
         
-        city2 : 'city2_info' 
-            ({'temp', 'humidity', 'wind', 'sunset'})
+        'city2_info' :
+            {'date': datetime.now(),
+            'city': city2['name'],
+            'description': city2['weather'][0]['weather-description'],
+            'temp': city2['main']['temp'],
+            'humidity': city2['main']['humidity'],
+            'wind_speed': city2['wind']['speed'],
+            'sunrise': datetime.fromtimestamp(city2['sys']['sunrise']),
+            'sunset': datetime.fromtimestamp(city2['sys']['sunset']),
+            'units_letter': get_letter_for_units(units)
+            }
 
     }
 
