@@ -95,6 +95,8 @@ def cityWeather(city, units):
 
     }
 
+    return requests.get(API_URL, params=params).json()
+
 @app.route('/comparison_results')
 def comparison_results():
     """Displays the relative weather for 2 different cities."""
@@ -107,7 +109,10 @@ def comparison_results():
     # TODO: Make 2 API calls, one for each city. HINT: You may want to write a 
     # helper function for this!
 
-    city1 = cityWeather
+    city1 = cityWeather(city1, units)
+    city2 = cityWeather(city2, units)
+
+    pp.pprint(city1)
 
 
     # TODO: Pass the information for both cities in the context. Make sure to
