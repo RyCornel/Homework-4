@@ -126,7 +126,7 @@ def comparison_results():
         'city1_info' :
             {'date': datetime.now(),
             'city': city1['name'],
-            'description': city1['weather'][0]['weather-description'],
+            'description': city1['weather'][0]['description'],
             'temp': city1['main']['temp'],
             'humidity': city1['main']['humidity'],
             'wind_speed': city1['wind']['speed'],
@@ -138,7 +138,7 @@ def comparison_results():
         'city2_info' :
             {'date': datetime.now(),
             'city': city2['name'],
-            'description': city2['weather'][0]['weather-description'],
+            'description': city2['weather'][0]['description'],
             'temp': city2['main']['temp'],
             'humidity': city2['main']['humidity'],
             'wind_speed': city2['wind']['speed'],
