@@ -74,7 +74,7 @@ def results():
     context = {
         'date': datetime.now(),
         'city': result_json['name'],
-        'description': result_json['weather'][0]['weather-description'],
+        'description': result_json['weather'][0]['description'],
         'temp': result_json['main']['temp'],
         'humidity': result_json['main']['humidity'],
         'wind_speed': result_json['wind']['speed'],
