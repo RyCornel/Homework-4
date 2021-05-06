@@ -27,7 +27,7 @@
     </p>
 
     <p>
-        The sun sets in {{city1}} [HOURS] hours [EARLIER/LATER] than in {{city2}}.
+        The sun sets in {{city1_info["city"]}} {{(city1_info["sunset"] - city2_info["sunset"]) // 3600}} hours {% if city1_info["sunset"] - city2_info["sunset"] < 0 %} earlier {% else %} later {% endif %} than in {{city2_info["city"]}}.
     </p>
     
 </section>
